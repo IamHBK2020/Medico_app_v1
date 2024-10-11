@@ -1,0 +1,189 @@
+<!-- Footer -->
+<footer>
+    <div class="container flex footer-container">
+        <a href="#" class="company-logo">
+            <img src="images/medico2.png" alt="company logo">
+        </a>
+        <div class="link-column flex">
+            <h4>Product</h4>
+            <a href="#overview" class="hover-links">Overview</a>
+            <a href="#" class="hover-links">Services</a>
+            <a href="#" class="hover-links">Usability</a>
+            <a href="#" class="hover-links">Customer Page</a>
+            <a href="#" class="hover-links">Status Page</a>
+        </div>
+        <div class="link-column flex">
+            <h4>Sorting</h4>
+            <a href="#" class="hover-links">Better Schems</a>
+            <a href="#" class="hover-links">First click</a>
+            <a href="#" class="hover-links">Preference Test</a>
+            <a href="#" class="hover-links">Feedback & surveys</a>
+        </div>
+        <div class="link-column flex">
+            <h4>Resources</h4>
+            <a href="#about" class="hover-links">Blog</a>
+            <a href="/Feedback.html" class="hover-links">Feedback</a>
+            <a href="#" class="hover-links">Help center</a>
+            <a href="#contact" class="hover-links">Contact</a>
+        </div>
+    </div>
+</footer>
+<!-- subfooter Start -->
+<div class="subfooter">
+    <div class="container flex subfooter-container">
+        <p id="contact">Contact: 1234567890</p>
+        <a href="#" class="hover-links">Privacy Policy</a>
+        <a href="#" class="hover-links">Terms & Conditions</a>
+        <a href="#" class="hover-links">Security information</a>
+        <a href="https://www.facebook.com/" class="hover-links" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.twitter.com/" class="hover-links" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/" class="hover-links" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="https://www.youtube.com/" class="hover-links" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/e1f68ae252.js" crossorigin="anonymous"></script>
+<!-- css for footer section -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500,family=Roboto:wght@400;700&display=swap');
+
+    /* Resets */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary-text-color: #183b56;
+        --secondary-text-color: #577592;
+        --accent-color: #2294ed;
+        --accent-color-dark: #1d69a3;
+        --padding-inline-section: 20px;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--primary-text-color);
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.25rem;
+        color: var(--secondary-text-color);
+        line-height: 1.8rem;
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    /* Utility-Classes */
+
+    .small-bold-text {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .container {
+        max-width: 1180px;
+        margin-inline: auto;
+        padding-inline: var(--padding-inline-section);
+        overflow: hidden;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .hover-links {
+        color: var(--primary-text-color);
+        transition: 0.2s ease-out;
+    }
+
+    .hover-links:hover {
+        color: var(--accent-color);
+    }
+
+    .primary-button {
+        background-color: var(--accent-color);
+        border-radius: 6px;
+        font-weight: 700;
+        color: white !important;
+        padding: 12px 24px;
+        box-shadow: 0 0 2px var(--secondary-text-color);
+        transition: 0.2s ease-out;
+        text-align: center;
+    }
+
+    .primary-button:hover {
+        background-color: var(--accent-color-dark);
+    }
+
+    .secondary-button {
+        border: 0.5px solid var(--secondary-text-color);
+        border-radius: 6px;
+        font-weight: 700;
+        color: var(--primary-text-color) !important;
+        padding: 12px 24px;
+        transition: 0.2s ease-out;
+    }
+
+    .secondary-button:hover {
+        border-color: var(--accent-color);
+        color: var(--accent-color) !important;
+    }
+
+    /* Footer Start */
+
+    footer {
+        padding: 50px;
+        background-color: #ebf2fa;
+    }
+    .s-footer{
+        padding: 0;
+    }
+
+    .link-column {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-container {
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* subfooter Start */
+
+    .subfooter {
+        background-color: #b9cde4;
+        padding: var(--padding-inline-section);
+    }
+
+    .subfooter-container {
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+</style>

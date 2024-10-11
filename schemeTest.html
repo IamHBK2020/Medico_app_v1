@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes</title>
+    <link rel="stylesheet" href="frontpage.css">
+    <link rel="stylesheet" href="media-quries.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/e1f68ae252.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+            :root {
+                --primary-text-color: #183b56;
+                --secondary-text-color: #577592;
+                --accent-color: #2294ed;
+                --accent-color-dark: #1d69a3;
+                --padding-inline-section: 20px;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.25rem;
+                color: var(--secondary-text-color);
+                line-height: 1.8rem;
+            }
+            
+            a {
+                text-decoration: none;
+                display: inline-block;
+            }
+            
+            ul {
+                list-style: none;
+            }
+            
+            /* Utility-Classes */
+            
+            .small-bold-text {
+                font-size: 1rem;
+                font-weight: 700;
+            }
+            
+            .container {
+                max-width: 1360px;
+                margin-inline: auto;
+                padding-inline: var(--padding-inline-section);
+                overflow: hidden;
+            }
+            
+            .flex {
+                display: flex;
+                align-items: center;
+            }
+            
+            .hover-links {
+                color: var(--primary-text-color);
+                transition: 0.2s ease-out;
+            }
+            
+            .hover-links:hover {
+                color: var(--accent-color);
+            }
+            
+            .primary-button {
+                background-color: var(--accent-color);
+                border-radius: 6px;
+                font-weight: 700;
+                color: white !important;
+                padding: 12px 24px;
+                box-shadow: 0 0 2px var(--secondary-text-color);
+                transition: 0.2s ease-out;
+                text-align: center;
+            }
+            
+            .primary-button:hover {
+                background-color: var(--accent-color-dark);
+            }
+            
+            .secondary-button {
+                border: 0.5px solid var(--secondary-text-color);
+                border-radius: 6px;
+                font-weight: 700;
+                color: var(--primary-text-color) !important;
+                padding: 12px 24px;
+                transition: 0.2s ease-out;
+            }
+            
+            .secondary-button:hover {
+                border-color: var(--accent-color);
+                color: var(--accent-color) !important;
+            }
+            
+            body {
+                font-family: 'Poppins', sans-serif;
+                color: var(--primary-text-color);
+            }
+            
+            .top-banner {
+                background-image: url('images/asset 28.png');
+                background-color: #4fb3d4;
+                background-size: 300px;
+            }
+            
+            .banner-text {
+                color: white;
+                padding: 15px 30px;
+                text-align: center;
+            }
+            
+            /* navbar start */
+            
+            .main-nav {
+                margin-top: 20px;
+                justify-content: space-between;
+                position: relative;
+            }
+            
+            .company-logo img {
+                width: 200px;
+            }
+            
+            .nav-links {
+                flex-basis: 730px;
+            }
+            
+            .nav-links ul {
+                justify-content: end;
+                gap: 18px;
+            }
+            
+            .nav-toggle {
+                display: none;
+            }
+            
+            /* navbar end */
+        </style>
+        
+</head>
+
+<body>
+
+   <!-- Top banner start -->
+<div class="top-banner">
+    <div class="container">
+        <div class="small-bold-text banner-text">We welcome new patients from all communities and look forward to
+            seeing you at one of our clinics</div>
+    </div>
+</div>
+
+<!-- navbar Start -->
+<nav>
+    <div class="container main-nav flex">
+        <a href="#" class="company-logo">
+            <img src="images/logo112.png" alt="company-logo">
+        </a>
+        <div class="nav-links" id="nav-links">
+            <ul class="flex">
+                <li><a href="Frontpage.html" class="hover-links">Home</a></li>
+                <li><a href="#about" class="hover-links">About Us</a></li>
+                <li><a href="hospital.html" class="hover-links">Hospitals</a></li>
+                <li><a href="/scheme.html" class="hover-links">Schems</a></li>
+                <li><a href="/Feedback.html" class="hover-links secondary-button">Feedback</a></li>
+                <li><a href="SignIn.html" class="hover-links secondary-button">Log-In</a></li>
+                <li><a href="#" class="hover-links secondary-button">Log-Out</a></li>
+                <li><a href="#" class="hover-links"><i class="fa-solid fa-user fa-2xl"></i></a></li>
+            </ul>
+        </div>
+        <a href="#" class="nav-toggle hover-links" id="nav-toggle"><i class="fa-solid fa-bars"></i></a>
+    </div>
+</nav>
+    <!-- main filter part start -->
+    <div class="container5">
+
+        <div class="flex1">
+            <div class="filters5">
+                <label for="inputState" class="s">State</label>
+                <select class="form-control" id="inputState">
+                    <option value="SelectState">Select</option>
+                    <option value="Andra Pradesh">Andra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madya Pradesh">Madya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Orissa">Orissa</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttaranchal">Uttaranchal</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadeep">Lakshadeep</option>
+                    <option value="Pondicherry">Pondicherry</option>
+                </select>
+                <!------------------------------------------------>
+                <label for="schemetype" class="s">Scheme Type</label>
+                <div class="pick">
+
+                    <label for="Central">
+                        <input type="radio" name="radio" id="Central Sponsored" value="Central">
+                        Central Sponsored
+                    </label>
+
+                    <label for="State">
+                        <input type="radio" name="radio" id=" State Sponsored" value="State">
+                        State Sponsored
+
+                    </label>
+
+                </div>
+
+                <label for="gender" class="s">Gender</label>
+                <div class="pick">
+                    <label for="Male">
+                        <input type="radio" name="radio2" id="Male" value="Male">
+                        Male
+                    </label>
+                    <label for="Female">
+                        <input type="radio" name="radio2" id="Female" value="Female">
+                        Female
+                    </label>
+                    <label for="Unisex">
+                        <input type="radio" name="radio2" id="Unisex" value="Unisex">
+                        Unisex
+                    </label>
+                </div>
+                <!------------------------------------------------>
+
+                <label for="age" class="s">Age </label>
+                <select name="age" id="age">
+                    <option value="Select">Select</option>
+                    <option value="1">0-10</option>
+                    <option value="2">11-20</option>
+                    <option value="3">21-30</option>
+                    <option value="4">31-40</option>
+                    <option value="5">41-50</option>
+                    <option value="6">51-60</option>
+                    <option value="7">61-70</option>
+                    <option value="8">71-80</option>
+                    <option value="9">81-90</option>
+                    <option value="10">91-100</option>
+                </select>
+
+                <label for="residence" class="s">Residence</label>
+                <div class="pick">
+
+                    <label for="urban">
+                        <input type="radio" name="residence" id="urban" value="Urban">
+                        Urban
+                    </label>
+                    <label for="rural">
+                        <input type="radio" name="residence" id="rural" value="Rural">
+                        Rural
+                    </label>
+                </div>
+
+                <label for="Differently Abled" class="s">Differently Abled</label>
+                <div class="pick">
+
+                    <label for="yes">
+                        <input type="radio" name="Differently Abled" id="yes" value="Yes">
+                        Yes
+                    </label>
+
+                    <label for="no">
+                        <input type="radio" name="Differently Abled" id="no" value="No">
+                        No
+                    </label>
+
+                </div>
+
+                <label for="Occupation" class="s">Occupation </label>
+                <select name="occupation" id="Occupation">
+                    <option value="Select">Select</option>
+                    <option value="1">Unorganized Worker</option>
+                    <option value="2">Student</option>
+                    <option value="3">Construction Worker</option>
+                    <option value="4">Farmer</option>
+                    <option value="5">Artist</option>
+                    <option value="6">Fisherman</option>
+                    <option value="7">Artisans, Spinners & Weavers</option>
+                    <option value="8">Sportsperson</option>
+                    <option value="9">Ex Serviceman</option>
+                    <option value="10">Journalist</option>
+                    <option value="11">Organized Worker</option>
+                    <option value="12">Safai Karmchari</option>
+                    <option value="13">Coir Worker</option>
+                    <option value="14">Teacher/Faculty</option>
+                    <option value="15">Khadi Artisan</option>
+                    <option value="16">Health Worker</option>
+                    <option value="17">Street Vendor</option>
+                </select>
+
+            </div>
+            
+        </div>
+        <div class="flex1">
+            
+                <div class="flex1">
+                    <div class="table-responsive">
+                        <h3>Scheme Listing</h3>
+                        <div class="reset-btn">
+                            <button class="btn btn-danger" id="resetBtn">Reset </button>
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Scheme ID</th>
+                                    <th>Scheme Name</th>
+                                    <th>Type</th>
+                                    <th>Gender</th>
+                                    <th>State</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody1">
+                                <!-- Table content will be dynamically added here -->
+                            </tbody>
+                        </table>
+        
+                    </div>
+        
+        
+                </div>
+            
+        </div>
+    </div>
+
+
+    <footer class="s-footer">
+        <!-- Footer start -->
+        <!-- subfooter Start -->
+    </footer>
+
+    <script type="module" src="scheme.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <script src="searcharea.js"></script>
+    <script src="https://kit.fontawesome.com/e1f68ae252.js" crossorigin="anonymous"></script>
+    <script src="footer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+   
+    <script src="footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <!-- <link rel="stylesheet" href="Frontpage.css"> -->
+    <link rel="stylesheet" href="/media-quries.css">
+    <style>
+
+        /* feedback section start */
+.outer-box3 {
+    width: 100vw;
+    height: 100vh;
+}
+.inner-box3{
+    width: 390px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translatey(-50%);
+    padding: 12px 12px;
+    background-color: #4fb3d458;
+    /* background-color: #ffffffae; */
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #195075;
+    z-index: 1;
+
+}
+.signupheader3 h1{
+    font-size: 2.5rem;
+    color: #212121;
+}
+.signupheader3 p{
+    font-size: 0.9rem;
+    color: #555;
+}
+.signupbody3{
+    margin: 20px 0;
+}
+.signupbody3 p{
+    margin: 10px 0;
+}
+.signupbody3 p label{
+    display: block;
+    font-weight: bold;
+}
+.signupbody3 p input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 4px;
+}
+.signupbody3 p input[type="submit"]{
+background-color: #3498db;
+border: none;
+color: white;
+cursor: pointer;
+}
+.signupbody3 p input[type="submit"]:hover{
+    background-color: #195075;
+}
+.signup-footer3 p{
+    color: #555;
+    text-align: center;
+}
+.signup-footer3 p a{
+    color: #195075;   
+}
+.signup-footer3 p a:hover{
+    color: rgb(237, 18, 18);
+}
+
+
+
+#alert-container {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensure the alerts appear above other content */
+}
+
+/* Alert styles */
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
+    text-align: center;
+}
+
+/* Close button styles */
+.closebtn {
+    float: right;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- navbar Start -->
+    <nav class="navbar">
+
+    </nav>
+    <!-- navbar end -->
+
+    <!-- Feedback form start -->
+
+    <div class="outer-box3">
+        <div class="inner-box3">
+            <header class="signupheader3">
+                <h1>Feedback</h1>
+                <p>It Just Take 30 Seconds</p>
+            </header>
+            <main class="signupbody3">
+                <form action="#">
+                    <p>
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Enter Name" required>
+                    <p>
+                        <label for="emailid">Email</label>
+                        <input type="text" id="emailid" placeholder="Enter Email Id" required>
+                    </p>
+                    <p>
+                        <label for="mobno">Mobile Number</label>
+                        <input type="tel" id="mobno" placeholder="Enter Mobile Number" required>
+                    </p>
+                    <p>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                    </p>
+                    <p>
+                        <label for="message">Message</label>
+                        <input style="height: 120px;" type="text" id="message" placeholder="Type Here.." required>
+                    </p>
+                    <p>
+                        <input type="submit" id="feedback-submit" value="Submit">
+                    </p>
+
+                    </p>
+                </form>
+            </main>
+
+        </div>
+
+    </div>
+    <div id="alert-container"></div>
+
+    <!-- Footer start -->
+
+    <footer class="s-footer">
+
+    </footer>
+    <!-- subfooter Start -->
+
+    <script src="https://kit.fontawesome.com/e1f68ae252.js" crossorigin="anonymous"></script>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { getFirestore, setDoc, doc, addDoc,collection } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCrEd5tZbu6TUR5hpXbhBIiNVIuB9vPesg",
+            authDomain: "something-unique-b7146.firebaseapp.com",
+            projectId: "something-unique-b7146",
+            storageBucket: "something-unique-b7146.appspot.com",
+            messagingSenderId: "927112271858",
+            appId: "1:927112271858:web:a0329b14558bf1ed103d6b",
+            measurementId: "G-XX388HCDZR"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // const auth = getAuth(app);
+        const db = getFirestore(app);
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const submit = document.getElementById('feedback-submit');
+    const alertContainer = document.getElementById('alert-container');
+        const feedbackForm = document.getElementById('feedback-form');
+
+        submit.addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById('emailid').value;
+    const fullname = document.getElementById('fullname').value;
+    const mobno = document.getElementById('mobno').value;
+    const sub = document.getElementById('subject').value;
+    const mess = document.getElementById('message').value;
+
+        // Check if required fields are empty
+    if (!mobno || !fullname || !sub) {
+        alert("Please fill in all required fields: MobileNo, Name, and Subject");
+        return; // Prevent further execution
+    }
+
+    // Validate email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return; // Prevent further execution
+    }
+
+    // Access the 'collection' function from the 'firestore' namespace
+    const feedbackCollection = collection(db, "Feedbacks");
+
+    try {
+        // Add document to the collection
+        const docRef = await addDoc(feedbackCollection, {
+            fullname: fullname,
+            mobno: mobno,
+            message: mess,
+            email: email,
+            subject: sub
+        });
+
+        // Show success alert
+        showAlert("Feedback submitted successfully!", "success");
+
+        // Clear input fields
+        document.getElementById('emailid').value = "";
+        document.getElementById('fullname').value = "";
+        document.getElementById('mobno').value = "";
+        document.getElementById('subject').value = "";
+        document.getElementById('message').value = "";
+    } catch (error) {
+        // Show error alert
+        showAlert("An error occurred while submitting feedback. Please try again later.", "error");
+        console.error('Error adding document: ', error);
+        // Handle error, show error message to the user, etc.
+    }
+});
+
+function showAlert(message, type) {
+    // Create alert element
+    const alert = document.createElement("div");
+    alert.classList.add("alert");
+    alert.classList.add(type);
+
+    // Add message to alert
+    alert.innerText = message;
+
+    // Create close button
+    const closeBtn = document.createElement("span");
+    closeBtn.classList.add("closebtn");
+    closeBtn.innerHTML = "&times;"; // × character for close symbol
+
+    // Append close button to alert
+    alert.appendChild(closeBtn);
+
+    // Append alert to alert container
+    alertContainer.appendChild(alert);
+
+    // Close alert when close button is clicked
+    closeBtn.addEventListener("click", function () {
+        alert.remove();
+    });
+
+    // Hide alert after 5 seconds
+    setTimeout(function () {
+        alert.remove();
+    }, 5000); // Adjust time as needed
+
+}
+});
+//     const submit = document.getElementById('feedback-submit');
+
+//     submit.addEventListener("click", async function (event) {
+//     event.preventDefault();
+
+//     // Get input values
+//     const emailInput = document.getElementById('emailid');
+//     const fullnameInput = document.getElementById('fullname');
+//     const mobnoInput = document.getElementById('mobno');
+//     const subInput = document.getElementById('subject');
+//     const messInput = document.getElementById('message');
+
+//     const email = emailInput.value.trim();
+//     const fullname = fullnameInput.value.trim();
+//     const mobno = mobnoInput.value.trim();
+//     const sub = subInput.value.trim();
+//     const mess = messInput.value.trim();
+
+//     // Check if required fields are empty
+//     if (!mobno || !fullname || !sub) {
+//         alert("Please fill in all required fields: MobileNo, Name, and Subject");
+//         return; // Prevent further execution
+//     }
+
+//     // Validate email format
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailPattern.test(email)) {
+//         alert("Please enter a valid email address.");
+//         return; // Prevent further execution
+//     }
+
+//     // Access the 'collection' function from the 'firestore' namespace
+//     const feedbackCollection = collection(db, "Feedbacks");
+
+//     // Add document to Firestore
+//     await addDoc(feedbackCollection, {
+//         email: email,
+//         fullname: fullname,
+//         mobno: mobno,
+//         message: mess,
+//         subject: sub
+//     })
+//     .then((docRef) => {
+//         console.log("Added document");
+//         // Clear input fields
+//         emailInput.value = '';
+//         fullnameInput.value = '';
+//         mobnoInput.value = '';
+//         subInput.value = '';
+//         messInput.value = '';
+//     })
+//     .catch((error) => {
+//         console.error('Error adding document: ', error);
+//         // Handle error, show error message to the user, etc.
+//     });
+// });
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

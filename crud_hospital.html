@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Operations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Custom styles for the CRUD operations page */
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .btn {
+      border-radius: 15px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #3498db;
+      border-color: #3498db;
+    }
+
+    .btn-primary:hover {
+      background-color: #2980b9;
+      border-color: #2980b9;
+    }
+
+    .table {
+      background-color: #fff;
+      position: relative;
+      width: 100%;
+    }
+
+    .table th,
+    .table td {
+      vertical-align: middle;
+      text-align: center; /* Center align content */
+    }
+
+    .table th {
+      font-weight: bold;
+      background-color: #f0f0f0;
+      width: 16.67%; /* Equal width for each table heading */
+    }
+
+    .table th:nth-child(6) {
+      width: 25%; /* More space for the Description column */
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    /* Adjustments for the form and table sections */
+    .col-md-4 {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
+    .col-md-8 {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+
+    .fetch-btn {
+      margin-bottom: 20px; /* Add margin to bottom to separate from the form */
+    }
+
+    .fetch-btn-container {
+      display: flex;
+      justify-content: flex-end; /* Align button to the right */
+      margin-bottom: 20px; /* Add margin to bottom to separate from the form */
+    }
+  </style>
+</head>
+<body>
+
+  
+
+<div class="container">
+  <div class="fetch-btn-container">
+    <button type="button" id="fetbtn" class="btn btn-primary fetch-btn">Fetch</button>
+  </div>
+  <div class="row">
+    <!-- Form Section -->
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <label for="hostID">Hospital ID</label>
+          <input type="text" class="form-control" id="hostID">
+        </div>
+        <div class="form-group">
+            <label for="hostname">Hospital Name</label>
+            <input type="text" class="form-control" id="hostname">
+          </div>
+        <div class="form-group">
+          <label for="typebox">Type</label>
+          <input type="text" class="form-control" id="typebox">
+        </div>
+        <div class="form-group">
+          <label for="avbox">Scheme available</label>
+          <input type="text" class="form-control" id="avbox">
+        </div>
+        <div class="form-group">
+          <label for="statebox">State</label>
+          <input type="text" class="form-control" id="statebox">
+        </div>
+        <div class="form-group">
+          <label for="citybox">City</label>
+          <input type="text" class="form-control" id="citybox">
+        </div>
+        <div class="form-group">
+            <label for="emailbox">Email</label>
+            <input type="text" class="form-control" id="emailbox">
+          </div>
+        <div class="form-group">
+            <label for="phbox">Phone</label>
+            <input type="text" class="form-control" id="phbox">
+          </div>
+        <div class="form-group">
+          <label for="addbox">Address</label>
+          <textarea class="form-control" id="addbox" rows="4"></textarea>
+        </div>
+        <button type="button" id="insbtn" class="btn btn-primary">Insert</button>
+        <button type="button" id="selbtn" class="btn btn-primary">Select</button>
+        <button type="button" id="updbtn" class="btn btn-primary">Update</button>
+        <button type="button" id="delbtn" class="btn btn-primary">Delete</button>
+      </form>
+    </div>
+
+    <!-- Table Section -->
+    <div class="col-md-8">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Hospital ID</th>
+              <th>Hospital Name</th>
+              <th>Type</th>
+              <th>Scheme available</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody id="tbody1">
+            <!-- Table rows will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="crud_hospital.js" defer></script>
+</body>
+</html>

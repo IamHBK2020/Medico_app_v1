@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Hospitals</title>
+    
+    <link rel="stylesheet" href="media-quries.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+
+
+<style>
+
+.main-nav {
+        
+        /* margin-top: 20px; */
+        justify-content: space-between;
+        position: relative;
+        gap: 225px;
+        }
+        
+        .company-logo img {
+            width: 200px;
+        }
+        
+        .nav-links {
+            flex-basis: 730px;
+        }
+        
+        .nav-links ul {
+            justify-content: end;
+            gap: 18px;
+        }
+        
+        .nav-toggle {
+            display: none;
+        }
+        
+        /* navbar end */
+
+/* -----------------------------------------------------------------------------*/
+
+
+    .container4 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width as needed */
+        gap: 20px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .s1 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .inner-box4 h1 {
+        font-size: 2.5rem;
+        color: #212121;
+        margin-bottom: 20px;
+    }
+
+    .drop-bar4 {
+        margin-bottom: 20px;
+    }
+
+    .drop-bar4 label {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .drop-bar4 select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        background-color: #fff;
+        transition: border-color 0.3s ease;
+    }
+
+    .drop-bar4 select:focus {
+        border-color: #4fb3d458;
+        outline: none;
+    }
+
+    .submit-reset-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .submit-reset-buttons li {
+        margin: 0;
+    }
+
+    .submit-reset-buttons li a {
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4fb3d4;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-reset-buttons li a:hover {
+        background-color: #3688a8;
+    }
+
+    .hospital-logo img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+</style>
+
+
+
+
+
+
+
+<style>
+    .container4 {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.s1{
+    background-color: #4fb3d458;
+    margin-left: 15px;
+    margin-right: 150px;
+    border-radius: 10px;
+}
+
+/* main search area start */
+
+.inner-box4 h1 {
+    font-size: 2.5rem;
+    color: #212121;
+    padding: 15px;
+
+}
+
+
+.search-body4 label {
+    display: block;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: var(--secondary-text-color);
+    line-height: 1.8rem;
+    margin-bottom: 10px; 
+}
+
+.search-body4 select {
+    width: calc(100% - 50px); 
+    /* max-width: 300px;  */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 4px;
+}
+
+.hospital-logo img {
+    max-width: 80%;
+    margin-top: 100px;
+}
+
+
+.inner-box4 ul li {
+    margin: 20px 0;
+    margin-left: 70px;
+    display: inline-block;
+    
+}
+
+.drop-bar4 {
+    margin-left: 60px;
+    padding: 10px;
+       
+}
+</style>
+
+<body>
+
+    <nav class="navbar">
+        <!-- Top banner start -->
+        <!-- <div class="top-banner">
+            <div class="container">
+                <div class="small-bold-text banner-text">We welcome new patients from all communities and look forward to
+                    seeing you at one of our clinics</div>
+            </div>
+        </div> -->
+        
+        <!-- navbar Start -->
+        <nav style="width: 100%;">
+            <div class="container main-nav flex">
+                <a href="/index.html" class="company-logo">
+                    <img src="images/logo112.png" alt="company-logo">
+                </a>
+                <div class="nav-links" id="nav-links">
+                    <ul class="flex">
+                        <li><a href="/index.html" class="hover-links">Home</a></li>
+                        <li><a href="#about" class="hover-links">About Us</a></li>
+                        <li><a href="hospital.html" class="hover-links">Hospitals</a></li>
+                        <li><a href="/scheme.html" class="hover-links">Schems</a></li>
+                        <li><a href="/Feedback.html" class="hover-links secondary-button">Feedback</a></li>
+                        <li class="logged-out" style="display: none;"><a href="SignIn.html" class="hover-links primary-button">Log-In</a></li>
+                                <li class="logged-in" style="display: none;" id ="logout"><a href="#" class="hover-links secondary-button">Log-Out</a></li>
+                                <li class="logged-in" style="display: none;"><a href="#" class="hover-links"><i class="fa-solid fa-user fa-2xl"></i></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="nav-toggle hover-links" id="nav-toggle"><i class="fa-solid fa-bars"></i></a>
+            </div>
+        </nav>
+        
+        <script>
+            const toggleButton=document.getElementById('nav-toggle');
+            const navLinks=document.getElementById('nav-links');
+            toggleButton.addEventListener('click',() => {
+                navLinks.classList.toggle('active');
+            })
+
+            </script>
+
+    <!-- Search Body Start -->
+    <div class="container4">
+
+        <div class="inner-box4" style="width: 100%;" >
+
+            <div class="search-body4" style="width: 100%;">
+                <div class="s1" style="width: 90%; overflow: hidden;">
+                    <header class="search-header4">
+                        <h1>Search Hospitals</h1>
+                    </header>
+                    <div class="drop-bar4">
+                        <label for="inputState">State</label>
+                        <select class="form-control" id="inputState">
+                            <option value="SelectState">Select</option>
+                            <option value="Andra Pradesh">Andra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madya Pradesh">Madya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Orissa">Orissa</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttaranchal">Uttaranchal</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadeep">Lakshadeep</option>
+                            <option value="Pondicherry">Pondicherry</option>
+                        </select>
+                    </div>
+                    <div class="drop-bar4">
+                        <label for="inputDistrict">District</label>
+                        <select class="form-control" id="inputDistrict">
+                            <option value="">Select </option>
+                        </select>
+                    </div>
+                    <div class="drop-bar4">
+
+                        <label for="hospitaltype">Hospital Type</label>
+                        <select name="Hospital Type" id="hospitaltype">
+                            <option value="Select">Select</option>
+                            <option value="Public">Public</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </div>
+                    <div class="drop-bar4">
+
+                        <label for="speciality">Speciality</label>
+                        <select name="Speciality" id="speciality">
+                            <option value="Select">Select</option>
+                            <option value="BM">BM-Burns Managemnet</option>
+                            <option value="CP">CP-Consultations &amp; Procedures</option>
+                            <option value="ER">ER-Emergency Room Packages (Care requiring less than 12 hrs stay)
+                            </option>
+                            <option value="IA">IA-Name of Investigation</option>
+                            <option value="IB">IB-Laboratory Medicine</option>
+                            <option value="IC">IC-Nutritional Markers</option>
+                            <option value="ID">ID-Infectious Diseases</option>
+                            <option value="IE">IE-Hormones</option>
+                            <option value="IF">IF-USG, X - Ray, CT, MRI, Bone Densitometry</option>
+                            <option value="IG">IG-X - Ray</option>
+                            <option value="IH">IH-X - Ray Contrast Studies</option>
+                            <option value="II">II-Mammography</option>
+                            <option value="IJ">IJ-CT</option>
+                            <option value="IK">IK-MRI</option>
+                            <option value="IL">IL-Bone Densitometry (Dexa Scan)</option>
+                            <option value="IM">IM-Neurological investigations and procedures</option>
+                            <option value="IMP">IMP-Implants</option>
+                            <option value="IN">IN-Interventional Neuroradiology</option>
+                            <option value="IO">IO-Tests in Gastro-enterology</option>
+                            <option value="IP">IP-Tests in Endocrinology (In Addition to those included under Hormones)
+                            </option>
+                            <option value="IQ">IQ-CSF</option>
+                            <option value="JR">JR-Joint Replacement</option>
+                            <option value="M1">M1-General Medicine</option>
+                            <option value="M10">M10-OPD Diagnostic</option>
+                            <option value="M2">M2-Paediatric medical management</option>
+                            <option value="M3">M3-Neo-natal</option>
+                            <option value="M4">M4-Paediatric cancer</option>
+                            <option value="M5">M5-Medical Oncology</option>
+                            <option value="M6">M6-Radiation Oncology</option>
+                            <option value="M7">M7-Emergency Room Packages (Care requiring less than 12 hrs stay)
+                            </option>
+                            <option value="M8">M8-Mental Disorders Packages</option>
+                            <option value="MA">MA-Treatment Procedure Skin</option>
+                            <option value="MB">MB-Biopsies</option>
+                            <option value="MC">MC-Cardiology</option>
+                            <option value="MD">MD-Treatment procedure ICU / CCU procedures (Special Care Cases)</option>
+                            <option value="ME">ME-Treatment procedure Physiotherapy</option>
+                            <option value="MF">MF-Nuclear Medicine / Brachytherapy - High Dose Radiation</option>
+                            <option value="MG">MG-General Medicine</option>
+                            <option value="MJ">MJ-Nuclear Medicine / Chemotherapy</option>
+                            <option value="MK">MK-List of procedures / Tests in Gastroenterology / Endoscopic procedures
+                            </option>
+                            <option value="MM">MM-Mental Disorders Packages</option>
+                            <option value="MN">MN-Neo-natal care Packages</option>
+                            <option value="MO">MO-Medical Oncology</option>
+                            <option value="MP">MP-Paediatric Medical Management</option>
+                            <option value="MQ">MQ-Nuclear Medicine / Radiotherapy and Chemotherapy</option>
+                            <option value="MR">MR-Radiation Oncology</option>
+                            <option value="NA">NA-Paediatric Cancer</option>
+                            <option value="OA">OA-Others</option>
+                            <option value="OC">OC-OPD - Consultations, Procedures &amp; Investigations</option>
+                            <option value="OT">OT-Organ &amp; Tissue transplant</option>
+                            <option value="PH">PH-Preventive Health Check Up</option>
+                            <option value="S1">S1-General Surgery</option>
+                            <option value="S10">S10-Plastic &amp; reconstructive</option>
+                            <option value="S11">S11-Burns management</option>
+                            <option value="S12">S12-Cardiology</option>
+                            <option value="S13">S13-Cardio-thoracic &amp; Vascular surgery</option>
+                            <option value="S14">S14-Paediatric surgery</option>
+                            <option value="S15">S15-Surgical Oncology</option>
+                            <option value="S16">S16-Oral and Maxillofacial Surgery</option>
+                            <option value="S2">S2-Otorhinolaryngology</option>
+                            <option value="S3">S3-Opthalmology</option>
+                            <option value="S4">S4-Obstetrics &amp; Gynaecology</option>
+                            <option value="S5">S5-Orthopaedics</option>
+                            <option value="S6">S6-Polytrauma</option>
+                            <option value="S7">S7-Urology</option>
+                            <option value="S8">S8-Neurosurgery</option>
+                            <option value="S9">S9-Interventional Neuroradiology</option>
+                            <option value="SA">SA-Treatment procedure Head &amp; Neck</option>
+                            <option value="SB">SB-Orthopaedics</option>
+                            <option value="SC">SC-Surgical Oncology</option>
+                            <option value="SD">SD-Treatment procedure Oesophagus</option>
+                            <option value="SE">SE-Opthalmology</option>
+                            <option value="SF">SF-Treatment procedure Abdomen / GI Surgery</option>
+                            <option value="SG">SG-General Surgery</option>
+                            <option value="SH">SH-Treatment Procedure Burns and Plastic Surgery</option>
+                            <option value="SI">SI-Treatment Procedure Nephrology and Urology</option>
+                            <option value="SJ">SJ-Head and Neck cancer</option>
+                            <option value="SK">SK-Treatment Procedure Breast</option>
+                            <option value="SL">SL-Otorhinolaryngology</option>
+                            <option value="SM">SM-Oral and Maxillofacial Surgery</option>
+                            <option value="SN">SN-Neurosurgery</option>
+                            <option value="SO">SO-Obstetrics &amp; Gynaecology</option>
+                            <option value="SP">SP-Plastic &amp; reconstructive Surgery</option>
+                            <option value="SS">SS-Paediatric surgery</option>
+                            <option value="ST">ST-Polytrauma</option>
+                            <option value="SU">SU-Urology</option>
+                            <option value="SV">SV-Cardio-thoracic &amp; Vascular Surgery</option>
+                            <option value="TG">TG-Gender Affirming Medical and Surgical Treatments</option>
+                            <option value="UP">UP-Unspecified Package</option>
+                        </select>
+                    </div>
+                    <ul>
+                        <li><a href="#" class="hover-links primary-button">Submit</a></li>
+                        <li><a href="#" class="hover-links primary-button" onclick="clearInput()" type="reset">Reset</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="inner-box4">
+            <!-- <div class="hospital-logo">
+                <img src="images/banner.jpg" alt="hospital-logo">
+            </div> -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Hospital ID</th>
+                      <th>Hospital Name</th>
+                      <th>Type</th>
+                      <th>Scheme available</th>
+                      <th>State</th>
+                      <th>City</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Address</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody1">
+                    <!-- Table rows will be dynamically added here -->
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+    </div>
+    <!-- Search Body End -->
+
+
+    <footer class="s-footer">
+        <!-- Footer start -->
+        <!-- subfooter Start -->
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <script src="searcharea.js"></script>
+    <script src="https://kit.fontawesome.com/e1f68ae252.js" crossorigin="anonymous"></script>
+    <!-- <script src="navbar.js"></script> -->
+    <script src="footer.js"></script>
+
+
+
+    <script type="module">
+
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+            import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+
+
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyCrEd5tZbu6TUR5hpXbhBIiNVIuB9vPesg",
+                authDomain: "something-unique-b7146.firebaseapp.com",
+                projectId: "something-unique-b7146",
+                storageBucket: "something-unique-b7146.appspot.com",
+                messagingSenderId: "927112271858",
+                appId: "1:927112271858:web:a0329b14558bf1ed103d6b",
+                measurementId: "G-XX388HCDZR"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app)
+
+
+
+
+                    
+            async function getAllData() {
+
+            const dbRef = collection(db, "HospitalList");
+            onSnapshot(dbRef, (querySnapshot) => {
+            let hospitals = [];
+            querySnapshot.forEach((doc) => {
+            hospitals.push(doc.data());
+            });
+
+            addAllItemsToTable(hospitals);
+            console.log("function called from get to add all")
+
+            });
+
+
+            }
+
+            //---------------------------------------
+
+           var hospitalTypeSelect = document.getElementById()
+
+
+
+
+
+
+
+
+
+
+            //---------------------------------------------------------------
+
+
+
+            // let fetbtn = document.getElementById("fetchBtn");
+            // fetbtn.addEventListener("click", getAllData);
+            window.onload = getAllData;
+
+            //   let schemNo = 0;
+            let tbody = document.getElementById("tbody1");
+
+            //--------------------------------------------------------------------
+
+            function addOneItem(id,name,type,avail,state,city,email,phone,address) {
+            let trow = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+            let td5 = document.createElement("td");
+            let td6 = document.createElement("td");
+            let td7 = document.createElement("td");
+            let td8 = document.createElement("td");
+            let td9 = document.createElement("td");
+
+            td1.textContent = id;
+            td2.textContent = name;
+            td3.textContent = type;
+            td4.textContent = avail;
+            td5.textContent = state;
+            td6.textContent = city;
+            td7.textContent = email;
+            td8.textContent = phone;
+            // td9.textContent = address;
+
+            let addWords = address.split(' ');
+            let truncatedadd = addWords.slice(0, 5).join(' ');
+            if (addWords.length > 5) {
+            truncatedadd += '...';
+            }
+            td9.textContent = truncatedadd;
+            // td6.style.overflow = 'hidden';
+            td9.style.whiteSpace = 'nowrap'; // Ensure text doesn't wrap
+
+
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+            trow.appendChild(td4);
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+            trow.appendChild(td7);
+            trow.appendChild(td8);
+            trow.appendChild(td9);
+
+            tbody.appendChild(trow);
+            }
+
+            function addAllItemsToTable(hospitals) {
+            tbody.innerHTML = ""; // Clear the table body before adding new items
+
+            hospitals.forEach(element => {
+                // Assuming `element` contains properties like Host_ID, Host_name, Type, Avail, State, City, Email, Phone, and Address
+                addOneItem(element.Host_ID, element.Host_name, element.Type, element.Avail, element.State, element.City, element.Email, element.Phone, element.Address);
+            });
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

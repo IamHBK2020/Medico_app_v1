@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medico Webpage</title>
+    <link rel="stylesheet" href="frontpage.css">
+    <link rel="stylesheet" href="media-quries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+        :root {
+            --primary-text-color: #183b56;
+            --secondary-text-color: #577592;
+            --accent-color: #2294ed;
+            --accent-color-dark: #1d69a3;
+            --padding-inline-section: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.25rem;
+            color: var(--secondary-text-color);
+            line-height: 1.8rem;
+        }
+        
+        a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Utility-Classes */
+        
+        .small-bold-text {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1360px;
+            margin-inline: auto;
+            padding-inline: var(--padding-inline-section);
+            overflow: hidden;
+        }
+        
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+        
+        .hover-links {
+            color: var(--primary-text-color);
+            transition: 0.2s ease-out;
+        }
+        
+        .hover-links:hover {
+            color: var(--accent-color);
+        }
+        
+        .primary-button {
+            background-color: var(--accent-color);
+            border-radius: 6px;
+            font-weight: 700;
+            color: white !important;
+            padding: 12px 24px;
+            box-shadow: 0 0 2px var(--secondary-text-color);
+            transition: 0.2s ease-out;
+            text-align: center;
+        }
+        
+        .primary-button:hover {
+            background-color: var(--accent-color-dark);
+        }
+        
+        .secondary-button {
+            border: 0.5px solid var(--secondary-text-color);
+            border-radius: 6px;
+            font-weight: 700;
+            color: var(--primary-text-color) !important;
+            padding: 12px 24px;
+            transition: 0.2s ease-out;
+        }
+        
+        .secondary-button:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color) !important;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-text-color);
+        }
+        
+        .top-banner {
+            background-image: url('images/asset 28.png');
+            background-color: #4fb3d4;
+            background-size: 300px;
+        }
+        
+        .banner-text {
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+        }
+        
+        /* navbar start */
+        
+        .main-nav {
+            margin-top: 20px;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .company-logo img {
+            width: 200px;
+        }
+        
+        .nav-links {
+            flex-basis: 730px;
+        }
+        
+        .nav-links ul {
+            justify-content: end;
+            gap: 18px;
+        }
+        
+        .nav-toggle {
+            display: none;
+        }
+        
+        /* navbar end */
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+
+        <div class="top-banner">
+            <div class="container">
+                <div class="small-bold-text banner-text">We welcome new patients from all communities and look forward to
+                    seeing you at one of our clinics</div>
+            </div>
+        </div>
+        
+        <!-- navbar Start -->
+        <nav>
+            <div class="container main-nav flex">
+                <a href="#" class="company-logo">
+                    <img src="images/logo112.png" alt="company-logo">
+                </a>
+                <div class="nav-links" id="nav-links">
+                    <ul class="flex">
+                        <li><a href="Frontpage.html" class="hover-links">Home</a></li>
+                        <li><a href="#about" class="hover-links">About Us</a></li>
+                        <li><a href="hospital.html" class="hover-links">Hospitals</a></li>
+                        <li><a href="/scheme.html" class="hover-links">Schems</a></li>
+                        <li><a href="/Feedback.html" class="hover-links secondary-button">Feedback</a></li>
+                        <li class="logged-out" style="display: none;"><a href="SignIn.html" class="hover-links primary-button">Log-In</a></li>
+                        <li class="logged-in" style="display: none;" id ="logout"><a href="#" class="hover-links secondary-button">Log-Out</a></li>
+                        <li class="logged-in" style="display: none;"><a href="#" class="hover-links"><i class="fa-solid fa-user fa-2xl"></i></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="nav-toggle hover-links" id="nav-toggle"><i class="fa-solid fa-bars"></i></a>
+            </div>
+        </nav>
+
+
+
+    </nav>
+    <!-- header section -->
+
+    <header>
+        <div class="container header-section flex">
+            <div class="header-left">
+                <h1>Vision</h1>
+                <p>Search for the latest schemes, check your eligibility, and find nearby hospitals</p>
+                <a href="/scheme.html" class="primary-button get-started-btn">Get Started</a>
+            </div>
+            <div class="header-right">
+                <img src="images/asset 31.png" alt="Hero Image">
+            </div>
+        </div>
+    </header>
+
+    <section class="companies-section">
+        <div class="container">
+            <div class="small-bold-text companies-header">
+                The india’s best Hospitals rely on Medico to make better Dignosis decisions.
+                <div class="logos flex">
+                    <img class="logo" src="images/asset 39.jpg" alt="">
+                    <img class="logo" src="images/asset 40.jpg" alt="">
+                    <img class="logo" src="images/asset 41.jpg" alt="">
+                    <img class="logo" src="images/asset 42.jpg" alt="">
+                    <img class="logo" src="images/asset 36.jpg" alt="">
+                    <img class="logo" src="images/asset 37.jpg" alt="">
+                    <img class="logo" src="images/asset 38.jpg" alt="">
+                    <img class="logo" src="images/asset 44.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Section -->
+    <section class="features-section" id="overview">
+        <div class="container">
+            <div class="features-header">
+                <h2>Look For Some More New Features</h2>
+                <a href="#" class="secondary-button"> See All Features <i class="fa-solid fa-right-long"></i></a>
+            </div>
+            <div class="features-area flex">
+                <div class="features-card flex">
+                    <img src="images/asset 9.svg" alt="">
+                    <h3>Hospital Sorting</h3>
+                    <p>Handpicked hospitals curated to match your preferences and needs</p>
+                    <a href="#" class="secondary-button"> Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+                <div class="features-card flex">
+                    <img src="images/asset 10.svg" alt="">
+                    <h3>Better Schemes</h3>
+                    <p>Enhanced healthcare schemes tailored for your well-being</p>
+                    <a href="#" class="secondary-button"> Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+                <div class="features-card flex">
+                    <img src="images/asset 11.svg" alt="">
+                    <h3>First Click</h3>
+                    <p>First-click access to premium service solutions</p>
+                    <a href="#" class="secondary-button"> Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+                <div class="features-card flex">
+                    <img src="images/asset 12.svg" alt="">
+                    <h3>Feedback & Surveys</h3>
+                    <p>Enhanced services with continuous feedback and survey integration</p>
+                    <a href="#" class="secondary-button"> Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+                <div class="features-card flex">
+                    <img src="images/asset 13.svg" alt="">
+                    <h3>Preference Tests</h3>
+                    <p>We respect your preferences, delivering tailored results</p>
+                    <a href="#" class="secondary-button"> Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+                <div class="features-card flex">
+                    <img src="images/asset 14.svg" alt="">
+                    <h3>Five second tests</h3>
+                    <p>Discover top hospitals and schemes in seconds</p>
+                    <a href="#" class="secondary-button"> Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="big-feature-section" id="about">
+        <div class="container flex big-feature-container">
+            <div class="feature-img">
+                <img src="images/who we are.svg" alt="">
+            </div>
+            <div class="feature-desc-flex">
+                <h4>You Should Know</h4>
+                <h3>Who We Are</h3>
+                <p>We are a dedicated team committed to revolutionizing healthcare accessibility. Through innovation,
+                    compassion, and expertise, we strive to empower individuals, ensuring optimal well-being and quality
+                    of life for all</p>
+            </div>
+        </div>
+    </section>
+    <section class="big-feature-section">
+        <div class="container flex big-feature-container" id="second-big-feature">
+            <div class="feature-img">
+                <img src="images/asset 43.png" alt="">
+            </div>
+            <div class="feature-desc-flex">
+                <h4>Effortless Focus For</h4>
+                <h3>Vision</h3>
+                <p>Empowering individuals with accessible, high-quality healthcare solutions. Innovating, advocating,
+                    and ensuring wellness for all, one click at a time. Your health, our priority..</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="big-feature-section">
+        <div class="container flex big-feature-container">
+            <div class="feature-img">
+                <img src="images/asset 32.png" alt="">
+            </div>
+            <div class="feature-desc-flex">
+                <h4>Courageously Working For</h4>
+                <h3>Mission</h3>
+                <p>Our mission is to streamline the government user interface for government schemes and benefits.
+                    Reduce time and effort required to find and avail a government scheme</p>
+            </div>
+        </div>
+    </section>
+    <!-- Example-section Start -->
+    <section class="example-section">
+        <div class="container">
+            <div class="example-header flex">
+                <h2>One Platform, Endless Possibilities</h2>
+                <a href="#" class="secondary-button"> See more examples <i class="fa-solid fa-right-long"></i></a>
+            </div>
+            <div class="example-area flex">
+                <a href="#" class="examples-card">
+                    <h3 class="card-text">
+                        Can users complete task in my software interface?
+                    </h3>
+                </a>
+                <a href="#" class="examples-card">
+                    <h3 class="card-text">
+                        Can users find important pages on my website?
+                    </h3>
+                </a>
+                <a href="#" class="examples-card">
+                    <h3 class="card-text">
+                        is my website's intended audience clear?
+                    </h3>
+                </a>
+                <a href="#" class="examples-card">
+                    <h3 class="card-text">
+                        Do vistitors understand what a page is about?
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- cta section -->
+    <section class="cta-section">
+        <div class="container flex cta-section-container">
+            <h2>Start searching today</h2>
+            <p>Take the guesswork out of design decisions</p>
+            <a href="/scheme.html" class="primary-button">Get Started</a>
+
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="s-footer">
+   
+    </footer>
+
+    <script src="https://kit.fontawesome.com/e1f68ae252.js" crossorigin="anonymous"></script>
+    <script src="footer.js" defer></script>
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword,signOut,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+import { getFirestore, setDoc,doc, } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCrEd5tZbu6TUR5hpXbhBIiNVIuB9vPesg",
+  authDomain: "something-unique-b7146.firebaseapp.com",
+  projectId: "something-unique-b7146",
+  storageBucket: "something-unique-b7146.appspot.com",
+  messagingSenderId: "927112271858",
+  appId: "1:927112271858:web:a0329b14558bf1ed103d6b",
+  measurementId: "G-XX388HCDZR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app)
+
+
+   const logout = document.querySelector('#logout');
+  logout.addEventListener('click',(e)=>{
+      signOut(auth).then(()=>{
+          alert("sign out succesfull")
+          window.location.href = "/index.html";
+      })
+      .catch((err)=>{
+          console.error(err);
+
+      });
+  });
+
+
+  
+  auth.onAuthStateChanged((user) => {
+    // Check if the user is logged in and passing error checking as a third argument
+    if (user) {
+
+        console.log("auhtorized user")
+        setupUI(user);
+        // window.location.href = "crud_scheme.html";
+        alert("user already logged in ...")
+        // setupUI(user);
+    } else {
+
+            console.log("User logged out");
+            setupUI();
+
+    }
+});
+
+const loggedinLinks = document.querySelectorAll('.logged-in');
+const loggedoutLinks = document.querySelectorAll('.logged-out');
+
+function setupUI(user) {
+  if (user) {
+    // let html = "<h2>Logged in as " + user.email + "</h2>";
+
+    // Account.innerHTML = html;
+
+    loggedinLinks.forEach(item => item.style.display = "block");
+    loggedoutLinks.forEach(item => item.style.display = "none");
+
+  } else {
+    loggedinLinks.forEach(item => item.style.display = "none");
+    loggedoutLinks.forEach(item => item.style.display = "block");
+  }
+
+}
+        
+
+
+
+    </script>
+</body>
+</body>
+
+</html>
